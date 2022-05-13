@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "slavov_corp"
+version = "0.1.0"
+description = "Just fuck that MVP"
+authors = ["AlexUnder <sdm@shitposting.expert>"]
+license = "Russian Federation Constitution"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.4"
+djangorestframework = "^3.13.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
