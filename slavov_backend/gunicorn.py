@@ -14,10 +14,10 @@ max_requests = 1000
 workers = max_workers() + 1
 
 env = {
-    'DJANGO_SETTINGS_MODULE': 'crosschain_backend.settings.{}'.format(
+    'DJANGO_SETTINGS_MODULE': 'slavov.settings.{}'.format(
         environ.get('BACKEND_SETTINGS_MODE')
     )
 }
 
 reload = True
-name = 'crosschain_backend'
+name = 'slavov_backend'

@@ -1,7 +1,7 @@
 FROM python:3.10
 
 # Set environment varibles
-ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 POETRY_VIRTUALENVS_CREATE=0 SOURCE_DIR=/slavov_backend WORK_DIR=/code
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 POETRY_VIRTUALENVS_CREATE=0 SOURCE_DIR=/ WORK_DIR=/code
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y vim nano
 
