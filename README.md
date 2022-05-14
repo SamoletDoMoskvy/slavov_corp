@@ -20,6 +20,10 @@ docker-compose up
 docker-compose exec backend python manage.py makemigrations
 docker-compose exec backend python manage.py migrate
 ```
+Collect static files
+```bash
+docker-compose exec backend python manage.py collectstatic
+```
 Create a user for the application
 ```bash
 docker-compose exec backend python manage.py createsuperuser
