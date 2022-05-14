@@ -17,12 +17,12 @@ from slavov_backend import settings
 
 
 class Cargo(AbstractBaseModel):
-    id = CharField(primary_key=True,
-                   editable=False,
-                   max_length=32,
-                   verbose_name='код товара'
-                   )
-
+    id = CharField(
+        primary_key=True,
+        editable=False,
+        max_length=32,
+        verbose_name='код товара'
+    )
     weight = FloatField(
         default=0,
         verbose_name='вес',
@@ -42,12 +42,16 @@ class Cargo(AbstractBaseModel):
     description = TextField(
         max_length=1060,
         blank=True,
-        null=True
+        null=True,
+        verbose_name='описание',
     )
     from_destination = TextField(verbose_name='откуда')
     to_destination = TextField(verbose_name='куда')
 
     def save(self, **kwargs):
+        """
+        Встроенное UUID для пидоров?
+        """
         if not self.id:
             currend_index = Cargo.objects.count() + 1
             index_chunk = (10 - len(str(currend_index))) * '0' + str(currend_index)        # l is 10

@@ -9,6 +9,9 @@ license = "Russian Federation Constitution"
 python = "^3.10"
 Django = "^4.0.4"
 djangorestframework = "^3.13.1"
+Pillow = "^9.1.0"
+python-barcode = "^0.13.1"
+django-object-actions = "^4.0.0"
 
 [tool.poetry.dev-dependencies]
 
