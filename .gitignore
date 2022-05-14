@@ -1,2 +1,4 @@
 /fonts/README.txt
 .idea
+/db.sqlite3
+__pyc*
