@@ -20,8 +20,8 @@ class Cargo(AbstractBaseModel):
     id = CharField(
         primary_key=True,
         editable=False,
-        max_length=32,
-        verbose_name='код товара'
+        max_length=39,
+        verbose_name='код накладной',
     )
     weight = FloatField(
         default=0,
