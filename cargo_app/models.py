@@ -1,6 +1,5 @@
 import random
 import re
-from io import BytesIO
 from datetime import datetime
 from barcode import EAN13, Code39
 from barcode.writer import ImageWriter
@@ -59,7 +58,8 @@ class Cargo(AbstractBaseModel):
             random_val = random.randint(int("1" + "0" * 8), int("9" * 9))                  # l is 9
             #                                                                              total l is 39 (zaebis')
 
-            self.id = f"{random_val}{datetime_chunk}{index_chunk}"
+            self.id = f"{random_val}{datetime_chunk}{currend_index}"
+
         super().save(*kwargs)
 
     @property

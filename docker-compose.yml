@@ -22,7 +22,7 @@ services:
           context: .
         env_file: .env
         volumes:
-          - ./static/:/app/static
+          - static_data:/app/static
         depends_on:
           - database
         expose:
@@ -34,7 +34,7 @@ services:
         restart: always
         build: ./nginx
         volumes:
-          - ./static:/usr/share/nginx/static:ro
+          - static_data:/usr/share/nginx/static
         depends_on:
           - backend
         ports:

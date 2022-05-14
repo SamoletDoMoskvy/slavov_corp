@@ -4,8 +4,8 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('BACKEND_SECRET_KEY')
-# SECRET_KEY = 'django-insecure-dr(s^(=ud4$0kc+ru5&g89yb1ccmi@-t1)tvy&z+d&(ic-@!fn'
+# SECRET_KEY = os.getenv('BACKEND_SECRET_KEY')
+SECRET_KEY = 'django-insecure-dr(s^(=ud4$0kc+ru5&g89yb1ccmi@-t1)tvy&z+d&(ic-@!fn'
 DEBUG = True
 
 DEBUG = os.getenv('DEBUG')
@@ -107,6 +107,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+STATIC_ROOT = '/app/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
