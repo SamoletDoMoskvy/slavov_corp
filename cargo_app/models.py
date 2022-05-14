@@ -5,11 +5,11 @@ from datetime import datetime
 from barcode import EAN13, Code39
 from barcode.writer import ImageWriter
 
+
 from django.db.models import (
     CharField,
     TextField,
     FloatField,
-    IntegerField
 )
 
 from base.models import AbstractBaseModel
