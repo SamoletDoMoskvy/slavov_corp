@@ -1,4 +1,8 @@
 # slavov_corp
+Demo application, with a backend written in django, dockerized and using nginx as a proxy server.
+
+The functionality contains the generation of a barcode for an instance of a cargo model.
+Also includes a template that displays model data.
 
 ### REQUIREMENTS
 * Docker
