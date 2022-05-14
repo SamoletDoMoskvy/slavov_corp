@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+            "width=device-width, initial-scale=1.0">
+
+    <title>report {{cargo.id}}</title>
+    <link rel="stylesheet" href="{% static 'report.css' %}"/>
+
+</head>
+
+<body>
+{#    <h1 style="font-size: 2vw !important">{{cargo.id}}</h1>#}
+
+    <div id="bar1">
+        <div id="bar2">
+            <h2 id="size">Габариты</h2>
+            <div style="margin-left: 10px">
+                <div class="info">Ширина (см) - <span>{{ cargo.width }}</span></div>
+                <div class="info">Высота (см) - <span>{{ cargo.height }}</span></div>
+                <div class="info">Длина (см) -  <span>{{ cargo.length }}</span></div>
+                <div class="info">Вес (кг) -    <span>{{ cargo.weight }}</span></div>
+            </div>
+        </div>
+
+        <img src="{% static 'images/logo.svg' %}">
+
+    </div>
+
+    <div id="bar3">
+        <h2 id="sender">Отправитель</h2>
+        <div style="margin-left: 10px">
+            <div class="info">ФИО - <span>Славов Фёдор Георгиевич</span></div>
+            <div class="info">серия киберпаспорта - <span>С12314324235</span></div>
+        </div>
+    </div>
+
+    <div id="bar4">
+        <h2 id="receiver">Получатель</h2>
+        <div style="margin-left: 10px">
+            <div class="info">ФИО - <span>Тугай Александр Васильевич</span></div>
+            <div class="info">серия киберпаспорта - <span>С53242341321</span></div>
+        </div>
+    </div>
+
+    <div id="bar5" style="display: flex; justify-content: space-between; margin-top: 50px">
+        <div>
+            <h2>Откуда</h2>
+            <div class="info"><span>{{ cargo.from_destination }}</span></div>
+        </div>
+        <img id="arrow" src="{% static 'images/arrow.svg' %}">
+        <div>
+            <h2>куда</h2>
+            <div class="info"><span>{{ cargo.to_destination }}</span></div>
+        </div>
+    </div>
+
+    <div id="bar6" style="display: flex; flex-direction: column; align-items: center; margin-top: 50px">
+        <div>
+            <h2>Стоимость транспортировки</h2>
+            <div id="price">
+                1.200.000
+                <span id="currency">Евробаксов</span>
+            </div>
+
+        </div>
+        <div style="display: grid; place-content: center; padding-top: 30px">
+            {% with cargo.barcode_uri as bytecode_url %}
+                <img style="width: 100%" src="{% static bytecode_url %}"/>
+            {% endwith %}
+        </div>
+
+    </div>
+</body>
+</html>

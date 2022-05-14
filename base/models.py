@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from django.db.models import (
     BooleanField,
     DateTimeField,
@@ -35,4 +37,4 @@ class AbstractBaseModel(Model):
     displayed_objects = BaseDisplayedManager()
 
     class Meta:
-        abstract=True
+        abstract = True
