@@ -44,6 +44,16 @@ class Cargo(AbstractBaseModel):
         null=True,
         verbose_name='описание',
     )
+    sender = CharField(
+        max_length=90,
+        verbose_name='отправитель',
+        default='Владимир Владимирович Владимиров'
+    )
+    recipient = CharField(
+        max_length=90,
+        verbose_name='получатель',
+        default='Александр Александрович Александров'
+    )
     from_destination = TextField(verbose_name='откуда')
     to_destination = TextField(verbose_name='куда')
 
@@ -69,3 +79,7 @@ class Cargo(AbstractBaseModel):
             with open(barcode_file.as_posix(), 'wb+') as f:
                 Code39(self.id, writer=ImageWriter()).write(f)
         return f"/images/barcodes/{str(self.id)}.png"
+
+    @property
+    def price(self):
+        return 100 * self.height + (self.weight + self.length + self.width)

@@ -33,7 +33,7 @@
     <div id="bar3">
         <h2 id="sender">Отправитель</h2>
         <div style="margin-left: 10px">
-            <div class="info">ФИО - <span>Славов Фёдор Георгиевич</span></div>
+            <div class="info">ФИО - <span>{{ cargo.sender }}</span></div>
             <div class="info">серия киберпаспорта - <span>С12314324235</span></div>
         </div>
     </div>
@@ -41,7 +41,7 @@
     <div id="bar4">
         <h2 id="receiver">Получатель</h2>
         <div style="margin-left: 10px">
-            <div class="info">ФИО - <span>Тугай Александр Васильевич</span></div>
+            <div class="info">ФИО - <span>{{cargo.recipient}}</span></div>
             <div class="info">серия киберпаспорта - <span>С53242341321</span></div>
         </div>
     </div>
@@ -62,8 +62,8 @@
         <div>
             <h2>Стоимость транспортировки</h2>
             <div id="price">
-                1.200.000
-                <span id="currency">Евробаксов</span>
+                {{ cargo.price }}
+                <span id="currency">₽</span>
             </div>
 
         </div>

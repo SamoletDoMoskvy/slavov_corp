@@ -18,6 +18,9 @@ class CargoModelAdmin(DjangoObjectActions, ModelAdmin):
         'description',
         'from_destination',
         'to_destination',
+        'price',
+        'sender',
+        'recipient',
         '_created_at',
         '_updated_at',
     )
@@ -29,9 +32,13 @@ class CargoModelAdmin(DjangoObjectActions, ModelAdmin):
         'height',
         'from_destination',
         'to_destination',
+        'price',
+        'sender',
+        'recipient',
     )
     readonly_fields = (
         'id',
+        'price',
         '_created_at',
         '_updated_at',
     )
